@@ -1,0 +1,96 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Orientacao-a-Objetos\\E1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC6D84E9-3702-4A84-A9E2-EC4989DCF45E}|..\\E2\\E2.csproj|c:\\orientacao-a-objetos\\e2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC6D84E9-3702-4A84-A9E2-EC4989DCF45E}|..\\E2\\E2.csproj|c:\\orientacao-a-objetos\\e2\\habitat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC6D84E9-3702-4A84-A9E2-EC4989DCF45E}|..\\E2\\E2.csproj|c:\\orientacao-a-objetos\\e2\\habitatcatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC6D84E9-3702-4A84-A9E2-EC4989DCF45E}|..\\E2\\E2.csproj|c:\\orientacao-a-objetos\\e2\\species.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC6D84E9-3702-4A84-A9E2-EC4989DCF45E}|..\\E2\\E2.csproj|c:\\orientacao-a-objetos\\e2\\speciescatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HabitatCatalog.cs",
+              "DocumentMoniker": "C:\\Orientacao-a-Objetos\\E2\\HabitatCatalog.cs",
+              "RelativeDocumentMoniker": "..\\E2\\HabitatCatalog.cs",
+              "ToolTip": "C:\\Orientacao-a-Objetos\\E2\\HabitatCatalog.cs",
+              "RelativeToolTip": "..\\E2\\HabitatCatalog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T20:19:41.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Habitat.cs",
+              "DocumentMoniker": "C:\\Orientacao-a-Objetos\\E2\\Habitat.cs",
+              "RelativeDocumentMoniker": "..\\E2\\Habitat.cs",
+              "ToolTip": "C:\\Orientacao-a-Objetos\\E2\\Habitat.cs",
+              "RelativeToolTip": "..\\E2\\Habitat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T20:19:26.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Species.cs",
+              "DocumentMoniker": "C:\\Orientacao-a-Objetos\\E2\\Species.cs",
+              "RelativeDocumentMoniker": "..\\E2\\Species.cs",
+              "ToolTip": "C:\\Orientacao-a-Objetos\\E2\\Species.cs",
+              "RelativeToolTip": "..\\E2\\Species.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T20:01:43.038Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Orientacao-a-Objetos\\E2\\Program.cs",
+              "RelativeDocumentMoniker": "..\\E2\\Program.cs",
+              "ToolTip": "C:\\Orientacao-a-Objetos\\E2\\Program.cs",
+              "RelativeToolTip": "..\\E2\\Program.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACgAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T20:01:01.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SpeciesCatalog.cs",
+              "DocumentMoniker": "C:\\Orientacao-a-Objetos\\E2\\SpeciesCatalog.cs",
+              "RelativeDocumentMoniker": "..\\E2\\SpeciesCatalog.cs",
+              "ToolTip": "C:\\Orientacao-a-Objetos\\E2\\SpeciesCatalog.cs",
+              "RelativeToolTip": "..\\E2\\SpeciesCatalog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-04T19:58:33.475Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

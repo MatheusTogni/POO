@@ -1,0 +1,15 @@
+C:\Orientacao-a-Objetos\E1\E1\bin\Debug\net8.0\E1.exe
+C:\Orientacao-a-Objetos\E1\E1\bin\Debug\net8.0\E1.deps.json
+C:\Orientacao-a-Objetos\E1\E1\bin\Debug\net8.0\E1.runtimeconfig.json
+C:\Orientacao-a-Objetos\E1\E1\bin\Debug\net8.0\E1.dll
+C:\Orientacao-a-Objetos\E1\E1\bin\Debug\net8.0\E1.pdb
+C:\Orientacao-a-Objetos\E1\E1\obj\Debug\net8.0\E1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Orientacao-a-Objetos\E1\E1\obj\Debug\net8.0\E1.AssemblyInfoInputs.cache
+C:\Orientacao-a-Objetos\E1\E1\obj\Debug\net8.0\E1.AssemblyInfo.cs
+C:\Orientacao-a-Objetos\E1\E1\obj\Debug\net8.0\E1.csproj.CoreCompileInputs.cache
+C:\Orientacao-a-Objetos\E1\E1\obj\Debug\net8.0\E1.sourcelink.json
+C:\Orientacao-a-Objetos\E1\E1\obj\Debug\net8.0\E1.dll
+C:\Orientacao-a-Objetos\E1\E1\obj\Debug\net8.0\refint\E1.dll
+C:\Orientacao-a-Objetos\E1\E1\obj\Debug\net8.0\E1.pdb
+C:\Orientacao-a-Objetos\E1\E1\obj\Debug\net8.0\E1.genruntimeconfig.cache
+C:\Orientacao-a-Objetos\E1\E1\obj\Debug\net8.0\ref\E1.dll
