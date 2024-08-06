@@ -1,4 +1,5 @@
 ﻿using System;
+using Classes;
 
 class Program
 {
@@ -6,6 +7,7 @@ class Program
     {
         SpeciesCatalog speciesCatalog = new SpeciesCatalog();
         HabitatCatalog habitatCatalog = new HabitatCatalog();
+        Report report = new Report(speciesCatalog, habitatCatalog);
         int choice = 0;
 
         do
@@ -28,27 +30,28 @@ class Program
                 switch (choice)
                 {
                     case 1:
-                        CatalogSpecies(speciesCatalog, habitatCatalog);
+                        CatalogSpecies(speciesCatalog);
                         break;
                     case 2:
                         ChangeSpeciesStatus(speciesCatalog);
                         break;
                     case 3:
-                        ShowSpeciesReport(speciesCatalog);
+                        ShowSpeciesReport(report);
                         break;
                     case 4:
-                        ShowAllSpecies(speciesCatalog);
+                        ShowAllSpecies(report);
                         break;
                     case 5:
                         CatalogHabitat(habitatCatalog);
                         break;
                     case 6:
-                        ShowAllHabitats(habitatCatalog);
+                        ShowAllHabitats(report);
                         break;
                     case 7:
                         AssociateHabitatToSpecies(speciesCatalog, habitatCatalog);
                         break;
                     case 8:
+                        Console.WriteLine("Encerrando o programa...");
                         break;
                     default:
                         Console.WriteLine("Opção inválida. Tente novamente.\n");
@@ -63,15 +66,14 @@ class Program
         } while (choice != 8);
     }
 
-    // Método para catalogar uma nova espécie
-    static void CatalogSpecies(SpeciesCatalog speciesCatalog, HabitatCatalog habitatCatalog)
+    static void CatalogSpecies(SpeciesCatalog speciesCatalog)
     {
         int id;
         bool validId = false;
 
         do
         {
-            id = GetSpeciesId();
+            id = GetValidatedSpeciesId();
             if (speciesCatalog.IsIdInUse(id))
             {
                 Species species = speciesCatalog.GetSpeciesById(id);
@@ -90,7 +92,11 @@ class Program
         {
             Console.Write("Digite o nome da espécie: ");
             name = Console.ReadLine();
-            if (speciesCatalog.IsNameInUse(name))
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                Console.WriteLine("Nome não pode ser nulo ou vazio. Digite um nome válido.\n");
+            }
+            else if (speciesCatalog.IsNameInUse(name))
             {
                 Console.WriteLine($"Nome {name} já está sendo usado. Digite um nome diferente.\n");
             }
@@ -100,20 +106,19 @@ class Program
             }
         } while (!validName);
 
-        string status = GetSpeciesStatus();
+        string status = GetValidatedSpeciesStatus();
 
         Species newSpecies = new Species(id, name, status);
         speciesCatalog.CatalogSpecies(newSpecies);
     }
 
-    // Método para alterar o status de uma espécie
     static void ChangeSpeciesStatus(SpeciesCatalog speciesCatalog)
     {
-        int id = GetSpeciesId();
+        int id = GetValidatedSpeciesId();
         Species species = speciesCatalog.GetSpeciesById(id);
         if (species != null)
         {
-            string newStatus = GetSpeciesStatus();
+            string newStatus = GetValidatedSpeciesStatus();
             species.ChangeStatus(newStatus);
         }
         else
@@ -122,20 +127,17 @@ class Program
         }
     }
 
-    // Método para mostrar relatório de uma espécie pelo ID
-    static void ShowSpeciesReport(SpeciesCatalog speciesCatalog)
+    static void ShowSpeciesReport(Report report)
     {
-        int id = GetSpeciesId();
-        speciesCatalog.DisplaySpeciesById(id);
+        int id = GetValidatedSpeciesId();
+        report.DisplaySpeciesById(id);
     }
 
-    // Método para mostrar todas as espécies catalogadas
-    static void ShowAllSpecies(SpeciesCatalog speciesCatalog)
+    static void ShowAllSpecies(Report report)
     {
-        speciesCatalog.DisplayAllSpecies();
+        report.DisplayAllSpecies();
     }
 
-    // Método para catalogar um novo habitat
     static void CatalogHabitat(HabitatCatalog habitatCatalog)
     {
         int id;
@@ -143,7 +145,7 @@ class Program
 
         do
         {
-            id = GetHabitatId();
+            id = GetValidatedHabitatId();
             if (habitatCatalog.IsIdInUse(id))
             {
                 Habitat habitat = habitatCatalog.GetHabitatById(id);
@@ -162,7 +164,11 @@ class Program
         {
             Console.Write("Digite o nome do habitat: ");
             name = Console.ReadLine();
-            if (habitatCatalog.IsNameInUse(name))
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                Console.WriteLine("Nome não pode ser nulo ou vazio. Digite um nome válido.\n");
+            }
+            else if (habitatCatalog.IsNameInUse(name))
             {
                 Console.WriteLine($"Nome {name} já está sendo usado. Digite um nome diferente.\n");
             }
@@ -172,48 +178,92 @@ class Program
             }
         } while (!validName);
 
-        Console.Write("Digite a descrição do habitat: ");
-        string description = Console.ReadLine();
+        string description;
+        bool validDescription = false;
+
+        do
+        {
+            Console.Write("Digite a descrição do habitat: ");
+            description = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(description))
+            {
+                Console.WriteLine("Descrição não pode ser nula ou vazia. Digite uma descrição válida.\n");
+            }
+            else
+            {
+                validDescription = true;
+            }
+        } while (!validDescription);
 
         Habitat newHabitat = new Habitat(id, name, description);
         habitatCatalog.CatalogHabitat(newHabitat);
     }
 
-    // Método para mostrar todos os habitats catalogados
-    static void ShowAllHabitats(HabitatCatalog habitatCatalog)
+    static void ShowAllHabitats(Report report)
     {
-        habitatCatalog.DisplayAllHabitats();
+        report.DisplayAllHabitats();
     }
 
-    // Método para associar um habitat a uma espécie
     static void AssociateHabitatToSpecies(SpeciesCatalog speciesCatalog, HabitatCatalog habitatCatalog)
     {
-        Console.Write("Digite o ID da espécie que deseja associar um habitat: ");
-        int speciesId = int.Parse(Console.ReadLine());
-        Species species = speciesCatalog.GetSpeciesById(speciesId);
-        if (species != null)
+        if (speciesCatalog.GetAllSpecies().Count == 0 && habitatCatalog.GetAllHabitats().Count == 0)
         {
-            Console.Write("Digite o ID do habitat que deseja associar: ");
-            int habitatId = int.Parse(Console.ReadLine());
-            Habitat habitat = habitatCatalog.GetHabitatById(habitatId);
-            if (habitat != null)
+            Console.WriteLine("Não há espécies nem habitats catalogados.\n");
+            return;
+        }
+        else if (speciesCatalog.GetAllSpecies().Count == 0)
+        {
+            Console.WriteLine("Não há espécies catalogadas.\n");
+            return;
+        }
+        else if (habitatCatalog.GetAllHabitats().Count == 0)
+        {
+            Console.WriteLine("Não há habitats catalogados.\n");
+            return;
+        }
+
+        int speciesId;
+        bool validSpeciesId = false;
+
+        do
+        {
+            speciesId = GetValidatedSpeciesId();
+            Species species = speciesCatalog.GetSpeciesById(speciesId);
+            if (species == null)
             {
-                species.Habitat = habitat;
-                Console.WriteLine($"Habitat {habitat.Name} associado à espécie {species.Name} com sucesso.\n");
+                Console.WriteLine("Espécie não encontrada. Digite um ID válido.\n");
             }
             else
             {
-                Console.WriteLine("Habitat não encontrado.\n");
+                validSpeciesId = true;
             }
-        }
-        else
+        } while (!validSpeciesId);
+
+        int habitatId;
+        bool validHabitatId = false;
+
+        do
         {
-            Console.WriteLine("Espécie não encontrada.\n");
-        }
+            habitatId = GetValidatedHabitatId();
+            Habitat habitat = habitatCatalog.GetHabitatById(habitatId);
+            if (habitat == null)
+            {
+                Console.WriteLine("Habitat não encontrado. Digite um ID válido.\n");
+            }
+            else
+            {
+                validHabitatId = true;
+            }
+        } while (!validHabitatId);
+
+        Species speciesToUpdate = speciesCatalog.GetSpeciesById(speciesId);
+        Habitat habitatToAssociate = habitatCatalog.GetHabitatById(habitatId);
+
+        speciesToUpdate.Habitat = habitatToAssociate;
+        Console.WriteLine($"Habitat {habitatToAssociate.Name} associado à espécie {speciesToUpdate.Name} com sucesso.\n");
     }
 
-    // Método para obter o status da espécie com validação
-    static string GetSpeciesStatus()
+    static string GetValidatedSpeciesStatus()
     {
         int statusChoice;
         string status = string.Empty;
@@ -250,8 +300,7 @@ class Program
         return status;
     }
 
-    // Método para obter o ID da espécie com validação
-    static int GetSpeciesId()
+    static int GetValidatedSpeciesId()
     {
         int id;
         bool validId = false;
@@ -259,13 +308,14 @@ class Program
         do
         {
             Console.Write("Digite o ID da espécie: ");
-            if (int.TryParse(Console.ReadLine(), out id))
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out id) && id > 0)
             {
                 validId = true;
             }
             else
             {
-                Console.WriteLine("Entrada inválida. Digite um número.\n");
+                Console.WriteLine("Entrada inválida. Digite um número válido.\n");
             }
 
         } while (!validId);
@@ -273,8 +323,7 @@ class Program
         return id;
     }
 
-    // Método para obter o ID do habitat com validação
-    static int GetHabitatId()
+    static int GetValidatedHabitatId()
     {
         int id;
         bool validId = false;
@@ -282,13 +331,14 @@ class Program
         do
         {
             Console.Write("Digite o ID do habitat: ");
-            if (int.TryParse(Console.ReadLine(), out id))
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out id) && id > 0)
             {
                 validId = true;
             }
             else
             {
-                Console.WriteLine("Entrada inválida. Digite um número.\n");
+                Console.WriteLine("Entrada inválida. Digite um número válido.\n");
             }
 
         } while (!validId);

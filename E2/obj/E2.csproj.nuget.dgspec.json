@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Orientacao-a-Objetos\\E2\\E2.csproj": {}
+    "C:\\POO\\E2\\E2.csproj": {}
   },
   "projects": {
-    "C:\\Orientacao-a-Objetos\\E2\\E2.csproj": {
+    "C:\\POO\\E2\\E2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Orientacao-a-Objetos\\E2\\E2.csproj",
+        "projectUniqueName": "C:\\POO\\E2\\E2.csproj",
         "projectName": "E2",
-        "projectPath": "C:\\Orientacao-a-Objetos\\E2\\E2.csproj",
+        "projectPath": "C:\\POO\\E2\\E2.csproj",
         "packagesPath": "C:\\Users\\Usuário\\.nuget\\packages\\",
-        "outputPath": "C:\\Orientacao-a-Objetos\\E2\\obj\\",
+        "outputPath": "C:\\POO\\E2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Usuário\\AppData\\Roaming\\NuGet\\NuGet.Config",
