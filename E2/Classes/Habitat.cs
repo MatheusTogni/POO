@@ -1,6 +1,9 @@
-﻿namespace Classes
+﻿using System;
+using Interfaces;
+
+namespace Classes
 {
-    public class Habitat
+    public class Habitat : IHabitat
     {
         public int Id { get; private set; }
         public string Name { get; set; }

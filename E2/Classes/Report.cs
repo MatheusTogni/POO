@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using Interfaces;
 
 namespace Classes
 {
-    public class Report
+    public class Report : IReport
     {
-        private SpeciesCatalog speciesCatalog;
-        private HabitatCatalog habitatCatalog;
+        private ISpeciesCatalog speciesCatalog;
+        private IHabitatCatalog habitatCatalog;
 
-        public Report(SpeciesCatalog speciesCatalog, HabitatCatalog habitatCatalog)
+        public Report(ISpeciesCatalog speciesCatalog, IHabitatCatalog habitatCatalog)
         {
             this.speciesCatalog = speciesCatalog;
             this.habitatCatalog = habitatCatalog;
@@ -16,7 +17,7 @@ namespace Classes
 
         public void DisplaySpeciesById(int id)
         {
-            Species species = speciesCatalog.GetSpeciesById(id);
+            ISpecies species = speciesCatalog.GetSpeciesById(id);
             if (species != null)
             {
                 species.DisplayInfo();
@@ -29,14 +30,14 @@ namespace Classes
 
         public void DisplayAllSpecies()
         {
-            List<Species> speciesList = speciesCatalog.GetAllSpecies();
+            List<ISpecies> speciesList = speciesCatalog.GetAllSpecies();
             if (speciesList.Count == 0)
             {
                 Console.WriteLine("Nenhuma espécie catalogada.\n");
             }
             else
             {
-                foreach (Species species in speciesList)
+                foreach (ISpecies species in speciesList)
                 {
                     species.DisplayInfo();
                 }
@@ -45,18 +46,23 @@ namespace Classes
 
         public void DisplayAllHabitats()
         {
-            List<Habitat> habitatList = habitatCatalog.GetAllHabitats();
+            List<IHabitat> habitatList = habitatCatalog.GetAllHabitats();
             if (habitatList.Count == 0)
             {
                 Console.WriteLine("Nenhum habitat catalogado.\n");
             }
             else
             {
-                foreach (Habitat habitat in habitatList)
+                foreach (IHabitat habitat in habitatList)
                 {
                     habitat.DisplayInfo();
                 }
             }
+        }
+
+        public ISpeciesCatalog GetSpeciesCatalog()
+        {
+            return speciesCatalog;
         }
     }
 }

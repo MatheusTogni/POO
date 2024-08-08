@@ -7,24 +7,12 @@
       "RelativeMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|c:\\poo\\e2\\classes\\habitat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|solutionrelative:classes\\habitat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|c:\\poo\\e2\\classes\\habitatcatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|solutionrelative:classes\\habitatcatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|c:\\poo\\e2\\interfaces\\ireport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|solutionrelative:interfaces\\ireport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|c:\\poo\\e2\\classes\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|solutionrelative:classes\\report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|c:\\poo\\e2\\classes\\species.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|solutionrelative:classes\\species.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|c:\\poo\\e2\\classes\\speciescatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD9685AA-3004-4F0A-91DF-3E3684C1B261}|E2.csproj|solutionrelative:classes\\speciescatalog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,58 +22,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Report.cs",
               "DocumentMoniker": "C:\\POO\\E2\\Classes\\Report.cs",
               "RelativeDocumentMoniker": "Classes\\Report.cs",
               "ToolTip": "C:\\POO\\E2\\Classes\\Report.cs",
               "RelativeToolTip": "Classes\\Report.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAiwD4AAAAAAAAA",
+              "ViewState": "AQIAABEAAAAAAAAAAAAuwEQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T14:53:20.79Z",
+              "WhenOpened": "2024-08-08T15:10:49.789Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SpeciesCatalog.cs",
-              "DocumentMoniker": "C:\\POO\\E2\\Classes\\SpeciesCatalog.cs",
-              "RelativeDocumentMoniker": "Classes\\SpeciesCatalog.cs",
-              "ToolTip": "C:\\POO\\E2\\Classes\\SpeciesCatalog.cs",
-              "RelativeToolTip": "Classes\\SpeciesCatalog.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAiwCoAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "IReport.cs",
+              "DocumentMoniker": "C:\\POO\\E2\\Interfaces\\IReport.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IReport.cs",
+              "ToolTip": "C:\\POO\\E2\\Interfaces\\IReport.cs",
+              "RelativeToolTip": "Interfaces\\IReport.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T14:52:56.246Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HabitatCatalog.cs",
-              "DocumentMoniker": "C:\\POO\\E2\\Classes\\HabitatCatalog.cs",
-              "RelativeDocumentMoniker": "Classes\\HabitatCatalog.cs",
-              "ToolTip": "C:\\POO\\E2\\Classes\\HabitatCatalog.cs",
-              "RelativeToolTip": "Classes\\HabitatCatalog.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAiwCoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T14:52:37.741Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Species.cs",
-              "DocumentMoniker": "C:\\POO\\E2\\Classes\\Species.cs",
-              "RelativeDocumentMoniker": "Classes\\Species.cs",
-              "ToolTip": "C:\\POO\\E2\\Classes\\Species.cs",
-              "RelativeToolTip": "Classes\\Species.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T14:50:21.455Z",
+              "WhenOpened": "2024-08-08T15:10:37.998Z",
               "EditorCaption": ""
             },
             {
@@ -96,22 +58,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\POO\\E2\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAADYBAAAAAAAAAADwv1YBAAAAAAAA",
+              "ViewState": "AQIAAEUBAAAAAAAAAAAuwFYBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-06T14:49:40.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Habitat.cs",
-              "DocumentMoniker": "C:\\POO\\E2\\Classes\\Habitat.cs",
-              "RelativeDocumentMoniker": "Classes\\Habitat.cs",
-              "ToolTip": "C:\\POO\\E2\\Classes\\Habitat.cs",
-              "RelativeToolTip": "Classes\\Habitat.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-04T20:29:55.685Z",
+              "WhenOpened": "2024-08-08T15:08:52.873Z",
               "EditorCaption": ""
             }
           ]

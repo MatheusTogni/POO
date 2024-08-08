@@ -1,13 +1,16 @@
-﻿namespace Classes
+﻿using System;
+using Interfaces;
+
+namespace Classes
 {
-    public class Species
+    public class Species : ISpecies
     {
         public int Id { get; private set; }
         public string Name { get; set; }
-        public string Status { get; set; } // Ativa ou Extinta
-        public Habitat Habitat { get; set; }
+        public string Status { get; set; }
+        public IHabitat Habitat { get; set; }
 
-        public Species(int id, string name, string status, Habitat habitat = null)
+        public Species(int id, string name, string status, IHabitat habitat = null)
         {
             Id = id;
             Name = name;

@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using Interfaces;
 
 namespace Classes
 {
-    public class HabitatCatalog
+    public class HabitatCatalog : IHabitatCatalog
     {
-        private List<Habitat> habitatList;
+        private List<IHabitat> habitatList;
 
         public HabitatCatalog()
         {
-            habitatList = new List<Habitat>();
+            habitatList = new List<IHabitat>();
         }
 
-        public void CatalogHabitat(Habitat habitat)
+        public void CatalogHabitat(IHabitat habitat)
         {
             habitatList.Add(habitat);
             Console.WriteLine($"Habitat {habitat.Name} catalogado com sucesso!\n");
         }
 
-        public Habitat GetHabitatById(int id)
+        public IHabitat GetHabitatById(int id)
         {
             return habitatList.Find(h => h.Id == id);
         }
@@ -33,8 +34,7 @@ namespace Classes
             return habitatList.Exists(h => h.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
 
-        // Adicionando o método para obter todos os habitats
-        public List<Habitat> GetAllHabitats()
+        public List<IHabitat> GetAllHabitats()
         {
             return habitatList;
         }

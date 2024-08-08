@@ -1,13 +1,14 @@
 ﻿using System;
 using Classes;
+using Interfaces;
 
 class Program
 {
     static void Main(string[] args)
     {
-        SpeciesCatalog speciesCatalog = new SpeciesCatalog();
-        HabitatCatalog habitatCatalog = new HabitatCatalog();
-        Report report = new Report(speciesCatalog, habitatCatalog);
+        ISpeciesCatalog speciesCatalog = new SpeciesCatalog();
+        IHabitatCatalog habitatCatalog = new HabitatCatalog();
+        IReport report = new Report(speciesCatalog, habitatCatalog);
         int choice = 0;
 
         do
@@ -66,7 +67,7 @@ class Program
         } while (choice != 8);
     }
 
-    static void CatalogSpecies(SpeciesCatalog speciesCatalog)
+    static void CatalogSpecies(ISpeciesCatalog speciesCatalog)
     {
         int id;
         bool validId = false;
@@ -76,7 +77,7 @@ class Program
             id = GetValidatedSpeciesId();
             if (speciesCatalog.IsIdInUse(id))
             {
-                Species species = speciesCatalog.GetSpeciesById(id);
+                ISpecies species = speciesCatalog.GetSpeciesById(id);
                 Console.WriteLine($"ID já está sendo usado pela espécie: {species.Name}\n");
             }
             else
@@ -108,14 +109,20 @@ class Program
 
         string status = GetValidatedSpeciesStatus();
 
-        Species newSpecies = new Species(id, name, status);
+        ISpecies newSpecies = new Species(id, name, status);
         speciesCatalog.CatalogSpecies(newSpecies);
     }
 
-    static void ChangeSpeciesStatus(SpeciesCatalog speciesCatalog)
+    static void ChangeSpeciesStatus(ISpeciesCatalog speciesCatalog)
     {
+        if (speciesCatalog.GetAllSpecies().Count == 0)
+        {
+            Console.WriteLine("Não há espécies catalogadas.\n");
+            return;
+        }
+
         int id = GetValidatedSpeciesId();
-        Species species = speciesCatalog.GetSpeciesById(id);
+        ISpecies species = speciesCatalog.GetSpeciesById(id);
         if (species != null)
         {
             string newStatus = GetValidatedSpeciesStatus();
@@ -127,18 +134,24 @@ class Program
         }
     }
 
-    static void ShowSpeciesReport(Report report)
+    static void ShowSpeciesReport(IReport report)
     {
+        if (report.GetSpeciesCatalog().GetAllSpecies().Count == 0)
+        {
+            Console.WriteLine("Não há espécies catalogadas.\n");
+            return;
+        }
+
         int id = GetValidatedSpeciesId();
         report.DisplaySpeciesById(id);
     }
 
-    static void ShowAllSpecies(Report report)
+    static void ShowAllSpecies(IReport report)
     {
         report.DisplayAllSpecies();
     }
 
-    static void CatalogHabitat(HabitatCatalog habitatCatalog)
+    static void CatalogHabitat(IHabitatCatalog habitatCatalog)
     {
         int id;
         bool validId = false;
@@ -148,7 +161,7 @@ class Program
             id = GetValidatedHabitatId();
             if (habitatCatalog.IsIdInUse(id))
             {
-                Habitat habitat = habitatCatalog.GetHabitatById(id);
+                IHabitat habitat = habitatCatalog.GetHabitatById(id);
                 Console.WriteLine($"ID já está sendo usado pelo habitat: {habitat.Name}\n");
             }
             else
@@ -195,16 +208,16 @@ class Program
             }
         } while (!validDescription);
 
-        Habitat newHabitat = new Habitat(id, name, description);
+        IHabitat newHabitat = new Habitat(id, name, description);
         habitatCatalog.CatalogHabitat(newHabitat);
     }
 
-    static void ShowAllHabitats(Report report)
+    static void ShowAllHabitats(IReport report)
     {
         report.DisplayAllHabitats();
     }
 
-    static void AssociateHabitatToSpecies(SpeciesCatalog speciesCatalog, HabitatCatalog habitatCatalog)
+    static void AssociateHabitatToSpecies(ISpeciesCatalog speciesCatalog, IHabitatCatalog habitatCatalog)
     {
         if (speciesCatalog.GetAllSpecies().Count == 0 && habitatCatalog.GetAllHabitats().Count == 0)
         {
@@ -228,7 +241,7 @@ class Program
         do
         {
             speciesId = GetValidatedSpeciesId();
-            Species species = speciesCatalog.GetSpeciesById(speciesId);
+            ISpecies species = speciesCatalog.GetSpeciesById(speciesId);
             if (species == null)
             {
                 Console.WriteLine("Espécie não encontrada. Digite um ID válido.\n");
@@ -245,7 +258,7 @@ class Program
         do
         {
             habitatId = GetValidatedHabitatId();
-            Habitat habitat = habitatCatalog.GetHabitatById(habitatId);
+            IHabitat habitat = habitatCatalog.GetHabitatById(habitatId);
             if (habitat == null)
             {
                 Console.WriteLine("Habitat não encontrado. Digite um ID válido.\n");
@@ -256,8 +269,8 @@ class Program
             }
         } while (!validHabitatId);
 
-        Species speciesToUpdate = speciesCatalog.GetSpeciesById(speciesId);
-        Habitat habitatToAssociate = habitatCatalog.GetHabitatById(habitatId);
+        ISpecies speciesToUpdate = speciesCatalog.GetSpeciesById(speciesId);
+        IHabitat habitatToAssociate = habitatCatalog.GetHabitatById(habitatId);
 
         speciesToUpdate.Habitat = habitatToAssociate;
         Console.WriteLine($"Habitat {habitatToAssociate.Name} associado à espécie {speciesToUpdate.Name} com sucesso.\n");

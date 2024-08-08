@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using Interfaces;
 
 namespace Classes
 {
-    public class SpeciesCatalog
+    public class SpeciesCatalog : ISpeciesCatalog
     {
-        private List<Species> speciesList;
+        private List<ISpecies> speciesList;
 
         public SpeciesCatalog()
         {
-            speciesList = new List<Species>();
+            speciesList = new List<ISpecies>();
         }
 
-        public void CatalogSpecies(Species species)
+        public void CatalogSpecies(ISpecies species)
         {
             speciesList.Add(species);
             Console.WriteLine($"Espécie {species.Name} catalogada com sucesso!\n");
         }
 
-        public Species GetSpeciesById(int id)
+        public ISpecies GetSpeciesById(int id)
         {
             return speciesList.Find(s => s.Id == id);
         }
@@ -33,8 +34,7 @@ namespace Classes
             return speciesList.Exists(s => s.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
 
-        // Adicionando o método para obter todas as espécies
-        public List<Species> GetAllSpecies()
+        public List<ISpecies> GetAllSpecies()
         {
             return speciesList;
         }
